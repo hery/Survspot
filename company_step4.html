@@ -1,0 +1,17 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+	<p>Step1 - Step2 - Step4 - [Step4] - Step5</p>
+	<p>Preview</p>
+	<form method="post" action="companyStepFive">
+		<input type="hidden" name="thisSurveyId" value="{{ thisSurveyId }}">
+		<p>TARGETS: {{ thisSurveyTarget}}</p>
+		{{ myForm }}
+		<p>Limit Number of Questions: {{ thisSurveyLimit }}</p>
+		<p>Price per Questions: ${{ thisSurveyIncentive }}</p> 
+		<br /><input type="submit" name="stepFivePost" value="Go Back"><input type="submit" name="stepFivePost" value="Next">
+		</form>
+</article>
+
+{% endblock %}

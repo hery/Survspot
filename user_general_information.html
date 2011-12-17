@@ -1,0 +1,198 @@
+{% extends "_base_user.html" %}
+{% block bodycontent %}
+
+<article>
+
+	<form method="post" action="userUpdateProfile"><br />
+	
+		<br /><table border="1" id="surveyList">
+			<tr class="alt"><div class="blue"><td><b>General Information</b></td></div></tr>
+			<tr><td>Age</td>
+				{% if age %}
+					<td class="in"><input type="text" name="age" value="{{ age }}"> years old
+				{% else %}
+					<td class="in"><input type="text" name="age"> years old
+				{% endif %}
+			</td></tr>		
+			<tr class="alt"><td>Gender</td>
+				{% if gender %}
+				<td class="in">{{ gender }} <input type="radio" name="gender" value="{{ gender}}" checked="yes"> |
+				Male <input type="radio" name="gender" value="Male">
+				Female <input type="radio" name="gender" value="Female">
+				{% else %}
+				<td class="in">Male <input type="radio" name="gender" value="Male">Female <input type="radio" name="gender" value="Female">
+				{% endif %}
+			</td></tr>
+			<tr><td>Family Size</td>
+				{% if familySize %}
+				<td class="in"><input type="text" name="familySize" value="{{ familySize }}"> persons
+				{% else %}
+				<td class="in"><input type="text" name="familySize"> persons
+				{% endif %}
+			</td></tr>	
+			<tr class="alt"><td>Number of Children</td>
+				{% if numberOfChildren %}
+				<td class="in"><input type="text" name="numberOfChildren" value="{{ numberOfChildren }}"> children
+				{% else %}
+				<td class="in"><input type="text" name="numberOfChildren"> children
+				{% endif %}
+			</td></tr>	
+			<tr><td>Marital Status</td>
+				<td class="in"><select name="maritalStatus">
+					{% if maritalStatus %} 
+					<option value="{{ maritalStatus }}" selected="selected">{{ maritalStatus }}</option>
+					{% else %}
+					<option value="" selected="selected"></option>
+					{% endif %}
+					<option value="Single" >Single</option>
+					<option value="Married" >Married</option>
+					<option value="Divorced" >Divorced</option>
+					<option value="Widowed" >Widowed</option>
+				</select>
+			</td></tr>
+			<tr class="alt"><td>Household Income</td>
+				{% if householdIncome %}
+				<td class="in">Approximately $<input type="text" name="householdIncome" value="{{ householdIncome }}">
+				{% else %}
+				<td class="in">Approximately $<input type="text" name="householdIncome">
+				{% endif %}
+			</td></tr>	
+			<tr><td>Education</td>
+				<td class="in"><select name="education"> 
+					{% if education %}
+					<option value="{{ education }}" selected="selected">{{ education }}</option>
+					{% else %}
+					<option value="" selected="selected"></option>
+					{% endif %}
+					<option value="No College" >No College</option>
+					<option value="Some College" >Some College</option>
+					<option value="College" >College</option>
+					<option value="Graduate School" >Graduate School</option>
+				</select>
+			</td></tr>
+			<tr class="alt"><td>Ethnicity</td>
+				<td class="in"><select name="ethnicity"> 
+					{% if ethnicity %}
+					<option value="{{ ethnicity }}" selected="selected">{{ ethnicity }}</option>
+					{% else %}
+					<option value="" selected="selected"></option>
+					{% endif %}
+					<option value="White/Caucasian" >White/Caucasian</option>
+					<option value="Hispanic/Latino" >Hispanic/Latino</option>
+					<option value="Asian/Pacific Islander" >Asian/Pacific Islander</option>
+					<option value="Native American Indian" >Native American Indian</option>
+					<option value="Other" >Other</option>
+				</select>
+			</td></tr>
+			<tr><td>Religion</td>
+				<td class="in"><select name="religion">
+					{% if religion %}
+					<option value="{{ religion }}" selected="selected">{{ religion }}</option>
+					{% else %}
+					<option value="" selected="selected"></option>
+					{% endif %}
+					<option value="Christianity">
+					Christianity
+					</option>
+					<option value="Islam">
+					Islam
+					</option>
+					<option value="Secular/Nonreligious/Agnostic/Atheist">
+					Secular/Nonreligious/Agnostic/Atheist
+					</option>
+					<option value="Hinduism">
+					Hinduism
+					</option>
+					<option value="Chinese traditional religion">
+					Chinese traditional religion
+					</option>
+					<option value="Buddhism">
+					Buddhism
+					</option>
+					<option value="Primal-indigenous">
+					Primal-indigenous
+					</option>
+					<option value="African Traditional & Diasporic">
+					African Traditional & Diasporic
+					</option>
+					<option value="Sikhism">
+					Sikhism
+					</option>
+					<option value="Juche">
+					Juche
+					</option>
+					<option value="Spiritism">
+					Spiritism
+					</option>
+					<option value="Judaism">
+					Judaism
+					</option>
+					<option value="Baha'i">
+					Baha'i
+					</option>
+					<option value="Jainism">
+					Jainism
+					</option>
+					<option value="Shinto">
+					Shinto
+					</option>
+					<option value="Cao Dai">
+					Cao Dai
+					</option>
+					<option value="Zoroastrianism">
+					Zoroastrianism
+					</option>
+					<option value="Tenrikyo">
+					Tenrikyo
+					</option>
+					<option value="Neo-Paganism">
+					Neo-Paganism
+					</option>
+					<option value="Unitarian-Universalism">
+					Unitarian-Universalism
+					</option>
+					<option value="Rastafarianism">
+					Rastafarianism
+					</option>
+					<option value="Scientology">
+					Scientology
+					</option></select></td></tr>
+					<tr class="alt"><td>Occupation</td>
+						<td class="in"><select name="occupation"> 
+							{% if occupation %}
+							<option value="{{ occupation }}" selected="selected">{{ occupation }}</option>
+							{% else %}
+							<option value="" selected="selected"></option>
+							{% endif %}
+							<option value="Management">Management
+							</option><option value="Business & Financial">Business & Financial					
+							</option><option value="Computer & Mathematics">Computer & Mathematics				
+							</option><option value="Architecture & Engineering">Architecture & Engineering
+							</option><option value="Life, Physical & Social Sciences">Life, Physical & Social Sciences
+							</option><option value="Health">Health
+							</option><option value="Legal">Legal
+							</option><option value="Education & Library">Education & Library
+							</option><option value="Art, Design, Entertainment & Media Sports">Art, Design, Entertainment & Media Sports
+							</option><option value="Sales">Sales
+							</option><option value="Office & Administrative">Office & Administrative
+							</option><option value="Protective Occupations">Protective Occupations
+							</option><option value="Food Preparation & Serving">Food Preparation & Serving
+							</option><option value="Buildings & Grounds Maintenance Occupations">Buildings & Grounds Maintenance Occupations
+							</option><option value="Personal Care & Service">Personal Care & Service
+							</option><option value="Farming & Forestry">Farming & Forestry
+							</option><option value="Construction">Construction
+							</option><option value="Installation, Maintenance & Repair">Installation, Maintenance & Repair
+							</option><option value="Production Occupations">Production Occupations
+							</option><option value="Transportation & Material Moving">Transportation & Material Moving
+							</option><option value="Military">Military
+							</option>
+							</select></td></tr>
+							
+					
+		</table>
+		<br /><input type="submit" value="Submit">
+	</form>
+	<br /><a href="userAccount">Go Back</a>
+</article>
+
+{% endblock %}

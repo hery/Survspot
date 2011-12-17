@@ -1,0 +1,14 @@
+application: survspot
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+- url : /img
+  static_dir: img
+  
+- url: /stylesheets
+  static_dir: stylesheets
+  
+- url: /.*
+  script: main.py

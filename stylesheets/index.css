@@ -1,0 +1,7 @@
+body	{font-family:arial;}
+article {width:100%; text-align:center; margin-top:80px; }
+a:link {color:#0066CC; text-decoration:none;}      
+a:visited {color:#0066CC;text-decoration:none;}  
+a:hover {color:#FF6600; text-decoration:underline;}  
+a:active {color:#000000;text-decoration:none;}
+

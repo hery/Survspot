@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+	<meta charset=utf-8>
+	<title>Survspot: Survey Anytime, Anywhere.</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+	<script> document.createElement(‘header’); document.createElement(‘nav’); 
+	document.createElement(‘article’); document.createElement(‘footer’); </script>
+</head>
+
+<body>
+	<header>
+		<h1>Survspot</h1>
+	<!--	<header class="right">{{ pageTitle }}</header> -->
+	</header>
+	<div class="line"></div> 
+	<nav>
+		<ul>
+			<li class="nav"><a href="/">Home</a></li>
+			<li class="nav"><a href="userAccount">Account Information</a></li>
+			<li class="nav"><a href="userCat">Conditions and Terms</a></li>
+			<li class="nav"><a href="{{ urlLogin }}">{{ urlLoginText }}</a></li>
+		</ul>
+	</nav>
+
+{% block bodycontent %}
+{% endblock %}
+
+<footer>
+	<div class="left"><img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif" 
+	alt="Powered by Google App Engine" /></div>
+	
+	<div class="right"><p><small>Copyright Survspot, 2011.</small></p><div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+ 	{% if user %}
+		{{ surveyForm }}
+
+	{% else %}
+	<p>Please login.</p>
+	{% endif %}
+</article>
+
+{% endblock %}

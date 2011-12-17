@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+	<meta charset=utf-8>
+	<title>Survspot: Survey Anytime, Anywhere.</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+	<script> document.createElement(‘header’); document.createElement(‘nav’); 
+	document.createElement(‘article’); document.createElement(‘footer’); </script>
+</head>
+
+<body>
+	<header>
+		<h1>Survspot</h1>
+	</header>
+	<nav>
+		<ul>
+			<li class="nav"><a href="indexUser">Home</a></li>
+			{% if user %}
+				<li><a href="userSurveyList">Take a Survey</a></li>
+				<li><a href="userAccount">Account Information</a></li>
+			{% endif %}
+			<li class="nav"><a href="userCat">Conditions and Terms</a></li>
+			<li class="nav"><a href="{{ urlLogin }}">{{ urlLoginText }}</a></li>
+		</ul>
+	</nav>
+
+	<article>
+		<p>Some Conditions and Terms for the User</p>
+		<a href="indexUser">Go Back</a>
+	</article>
+
+<footer>
+	<p><small>Copyright Survspot, 2011.</small></p>
+</footer>
+</body>
+
+</html>

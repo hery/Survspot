@@ -1,0 +1,50 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+	{{ targetArray }}
+	<p>Step1 - [Step2] - Step3 - Step4 - Step5</p>
+	<p>INPUT QUESTIONS</p>
+	You must input all your screening questions before the actual questions. <br /><br />
+	<form method="post" action="companyStepThree">
+	<input type="hidden" name="thisSurveyId" value="{{ thisSurveyId }}">
+		<table border="1">
+		<tr>
+			<td>Is this a screening question?</td>
+			<td><select name="questionType" size="0">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Question:</td>
+			<td><textarea cols="50" rows="3" name="question" ></textarea></td>
+		</tr>
+		<tr>
+			<td>Answer Type:</td>
+			<td><select name="answerType" size="0">
+				<option value="1">Text Field</option>
+				<option value="2">Radio Box</option>
+<!--				<option value="3">Check Box</option>
+				<option value="4">Picture</option> 			to be implemented later			-->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><br />Answer:<br /><h4>(1 answer/line)</h4></td>
+			<td><textarea cols="50" rows="3" name="answer" ></textarea></td>
+		</tr>
+		<tr>
+			<td>If screening question, specify right answer:</td>
+			<td><textarea cols="50" rows="3" name="rightAnswer" ></textarea></td>
+		</tr>
+		</table>
+		<br />
+		<input type="submit" name="stepThreePost" value="Go Back">
+		<input type="submit" name="stepThreePost" value="Add Question">
+		<input type="submit" name="stepThreePost" value="Next">
+		</form>
+</article>
+
+{% endblock %}

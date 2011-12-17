@@ -1,0 +1,13 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+	<p>Account overview for <b>{{ companyName }}</b></p>
+	<ul class="article">
+		<li class="article"><a href="companyEditProfile">Edit Company Profile</a></li>
+		<li class="article"><a href="companyOngoinSurveys">See Ongoing Surveys</a></li>
+		<li class="article"><a href="companyClosedSurveys">See Closed Surveys</a></li>
+	</ul>
+</article>
+
+{% endblock %}

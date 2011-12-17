@@ -1,0 +1,106 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+	<p>[Step1] - Step2 - Step3 - Step4 - Step5</p>
+	<p>Survey {{ thisSurveyId }} - {{ thisSurveyTitle }}: CHOOSE TARGET (beta)</p>
+	<form method="post" action="companyStepTwo">
+	<input type="hidden" name="thisSurveyId" value="{{ thisSurveyId }}">
+	<table border="1" id="surveyList">
+		<tr><td>Age</td>
+			<td class="in">From: <input type="text" name="ageLowerBound" value="">
+						 	To: <input type="text" name="ageUpperBound" value="">
+		</td></tr>		
+		<tr class="alt"><td>Gender</td>
+			<td class="in">Male: <input type="radio" name="gender" value="Male">
+						   Female <input type="radio" name="gender" value="Female">
+		</td></tr>
+		<tr><td>Family Size</td>
+			<td class="in">From: <input type="text" name="familySizeLowerBound" value="">
+						 	To: <input type="text" name="familySizeUpperBound" value="">
+		</td></tr>	
+		<tr class="alt"><td>Number of Children</td>
+			<td class="in">From: <input type="text" name="childrenLowerBound" value="">
+						 	To: <input type="text" name="childrenUpperBound" value="">
+		</td></tr>	
+		<tr><td>Marital Status</td>
+			<td class="in">Single <input type="checkbox" name="maritalStatus" value="Single">
+				Married <input type="checkbox" name="maritalStatus" value="Married">
+				Divorced <input type="checkbox" name="maritalStatus" value="Divorced">
+				Widowed <input type="checkbox" name="maritalStatus" value="Widowed">
+		</td></tr>
+		<tr class="alt"><td>Household Income ($)</td>
+			<td class="in">
+				From: <input type="text" name="householdIncomeLowerBound" value="">
+				To: <input type="text" name="householdIncomeUpperBound" value="">
+		</td></tr>	
+		<tr><td>Education</td>
+			<td class="in">
+				No College: <input type="checkbox" name="education" value="N o College">
+				Some College: <input type="checkbox" name="education" value="Some College">
+				College: <input type="checkbox" name="education" value="College">
+				Graduate School: <input type="checkbox" name="education" value="Graduate School">
+		</td></tr>
+		<tr class="alt"><td>Ethnicity</td>
+			<td class="in">
+				White/Caucasian <input type="checkbox" name="ethnicity" value="White/Caucasian">
+				Hispanic/Latino <input type="checkbox" name="ethnicity" value="Hispanic/Latino">
+				Asian/Pacific Islander <input type="checkbox" name="ethnicity" value="Asian/Pacific Islander">
+				Native American Indian <input type="checkbox" name="ethnicity" value="Native American Indian">
+				Other <input type="checkbox" name="ethnicity" value="Other">
+		</td></tr>
+		<tr><td>Religion</td>
+			<td class="in">
+				All <input type="checkbox" name="religion" value="All"><br />
+				Christianity <input type="checkbox" name="religion" value="Christianity"><br />
+				Islam <input type="checkbox" name="religion" value="Islam"><br />
+				Secular/Nonreligious/Agnostic/Atheist <input type="checkbox" name="religion" value="Secular/Non Religious/Agnostic/Atheist"><br />
+				Hinduism <input type="checkbox" name="religion" value="Hinduism"><br />
+				Chinese traditional religion <input type="checkbox" name="religion" value="Chinese Traditial Religion"><br />
+				Buddhism <input type="checkbox" name="religion" value="Buddhism"><br />
+				Primal-indigenous <input type="checkbox" name="religion" value="Primal-Indigenous"><br />
+				African Traditional & Diasporic <input type="checkbox" name="religion" value="African Traditional & Diasporic"><br />
+				Sikhism <input type="checkbox" name="religion" value="Sikhism"><br />
+				Spiritism <input type="checkbox" name="religion" value="Spiritism"><br />
+				Judaism <input type="checkbox" name="religion" value="Judaism"><br />
+				Baha'i <input type="checkbox" name="religion" value="Baha'i"><br />
+				Jainism <input type="checkbox" name="religion" value="Jainism"><br />
+				Shinto <input type="checkbox" name="religion" value="Shinto"><br />
+				Cao Dai <input type="checkbox" name="religion" value="Cao Dai"><br />
+				Zoroastrianism <input type="checkbox" name="religion" value="Zoroastrianism"><br />
+				Tenrikyo <input type="checkbox" name="religion" value="Tenrikyo"><br />
+				Neo-Paganism <input type="checkbox" name="religion" value="Neo-paganism"><br />
+				Unitarian-Universalism <input type="checkbox" name="religion" value="Unitarian-Universalism"><br />
+				Scientology <input type="checkbox" name="religion" value="Scientology"><br />
+				<tr class="alt"><td>Occupation</td>
+					<td class="in">
+						All <input type="checkbox" name="occupation" value="All"><br />
+						Management <input type="checkbox" name="occupation" value="Management"><br />
+						Business & Financial	<input type="checkbox" name="occupation" value="Business & Financial"><br />
+						Computer & Mathematics <input type="checkbox" name="occupation" value="Computer & Mathematics"><br />
+						Architecture & Engineering <input type="checkbox" name="occupation" value="Architecture & Engineering"><br />
+						Life, Physical & Social Sciences <input type="checkbox" name="occupation" value="Life, Physical & Social Sciences"><br />
+						Health <input type="checkbox" name="occupation" value="Health"><br />
+						Legal <input type="checkbox" name="occupation" value="Legal"><br />
+						Education & Library <input type="checkbox" name="occupation" value="Education & Library"><br />
+						Art, Design, Entertainment & Media Sports <input type="checkbox" name="occupation" value="Art, Design, Entertainment & Media Sports"><br />
+						Sales <input type="checkbox" name="occupation" value="Sales"><br />
+						Office & Administrative <input type="checkbox" name="occupation" value="Office & Administrative"><br />
+						Protective Occupations <input type="checkbox" name="occupation" value="Protective Occupations"><br />
+						Food Preparation & Serving <input type="checkbox" name="occupation" value="Food Preparation & Serving"><br />
+						Buildings & Grounds Maintenance Occupations <input type="checkbox" name="occupation" value="Buildings & Groups Maintenance Occupations"><br />
+						Personal Care & Service <input type="checkbox" name="occupation" value="Personal Care & Service"><br />
+						Farming & Forestry <input type="checkbox" name="occupation" value="Farming & Forestry"><br />
+						Construction <input type="checkbox" name="occupation" value="Construction"><br />
+						Installation, Maintenance & Repair <input type="checkbox" name="occupation" value="Installation, Maintenance & Repair"><br />
+						Production Occupations <input type="checkbox" name="occupation" value="Production Occupations"><br />
+						Transportation & Material Moving <input type="checkbox" name="occupation" value="Transportation & Material Moving"><br />
+						Military <input type="checkbox" name="occupation" value="Military"><br />
+						
+						
+						</table>
+						<br /><input type="submit" name="stepTwoPost" value="Cancel"><input type="submit" name="stepTwoPost" value="Next">
+						</form>
+</article>
+
+{% endblock %}

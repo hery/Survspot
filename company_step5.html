@@ -1,0 +1,30 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+	<p>Step1 - Step2 - Step4 - Step4 - [Step5]</p>
+	<p>Billing</p>
+	<form method="post" action="companySurveyComplete">
+		<table border="1">
+		<tr>
+			<td>Price Per Question:</td>
+			<td>${{ incentive }}</td>
+		</tr>
+			<td>Number of Question:</td>
+			<td>{{ numberOfQuestions }}</td>
+		<tr>
+		</tr>
+			<td>Additional Fees:</td>
+			<td>${{ addFees}}</td>
+		<tr>
+		</tr>
+			<td>Total:</td>
+			<td>${{ total }}</td>
+		<tr>
+		
+		</table>
+		<br /><input type="submit" name="postComplete" value="Go Back"><input type="submit" name="postComplete" value="Pay and Upload Survey">
+		</form>
+</article>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "_base_company.html" %}
+{% block bodycontent %}
+
+<article>
+	<p>Step1 - Step2 - [Step3] - Step4 - Step5</p>
+	<p>SET UP LIMIT AND INCENTIVE</p>
+	<form method="post" action="companyStepFour">
+		<input type="hidden" name="thisSurveyId" value="{{ thisSurveyId }}"
+		<table border="1">
+		<tr>
+			<td>Limit Number Before Closing Survey:</td>
+			<td><input type="text" name="limit"></td>
+		</tr>
+			<td>Incentive Payout ($):</td>
+			<td><input type="text" name="incentive"></td>
+		<tr>
+		
+		</table>
+		<br /><input type="submit" name="stepFourPost" value="Go Back"><input type="submit" name="stepFourPost" value="Next">
+		</form>
+</article>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "_base_user.html" %}
+{% block bodycontent %}
+
+<article>
+	<p>{{ message }}</p>
+	<p>Survey: {{ thisTitle }}. By {{ thisCompany }}.
+	{{ myForm }}<br />
+	<p>Some description of the process of receiving money</p>
+	<a href="indexUser">Go Home</a>
+</article>
+
+{% endblock %}
