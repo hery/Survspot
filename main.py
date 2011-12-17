@@ -24,6 +24,7 @@ from google.appengine.ext import db
 from google.appengine.api import users
 import random
 import string
+from django.utils import simplejson
 
 def userPassesScreeningQuestion(thisSurvey, userAnswerToScreeningQuestions):
 	i = 0
@@ -527,9 +528,16 @@ def createAnswerString(singleAL, answerType): #parameter is a list: ["a1,a2,a3" 
 #	def get(self):
 #		path = os.path.join(os.path.dirname(__file__),'index.html')
 #		self.response.out.write(template.render(path, path)) */ 
+
+def gql_json_parser(query_obj):
+    result = []
+    for entry in query_obj:
+        result.append(dict([(p, unicode(getattr(entry, p))) for p in entry.properties()]))
+    return result
 		
 class myHandler(webapp.RequestHandler):
 	def get(self):
+		
 		user = users.get_current_user()
 		if user:
 			addNewUser()
@@ -613,7 +621,7 @@ class myHandler(webapp.RequestHandler):
 			message = "please login."
 			tValues = {'message':message,'urlLogin': createLoginUrl(self)[0],'urlLoginText': createLoginUrl(self)[1]}
 			path = os.path.join(os.path.dirname(__file__),'index_user.html')
-			self.response.out.write(template.render(path, tValues))
+			self.response.out.write(template.render(path, tValues)) 
 
 
 
@@ -812,12 +820,10 @@ class userGeneralInformation(webapp.RequestHandler):
 
 class mobileRequest(webapp.RequestHandler):
 	def get(self):
-		myName = self.request.get("myName");
-		myStatus = self.request.get("myStatus");
-		tValues = {'myName': myName, 'myStatus': myStatus}
-#		tValues = {}
-		path = os.path.join(os.path.dirname(__file__),'mobile_request.html')
-		self.response.out.write(template.render(path, tValues))
+		query_data = db.GqlQuery("SELECT * FROM Survey")
+		json_query_data = gql_json_parser(query_data)
+		self.response.headers['Content-Type'] = 'application/json'
+		self.response.out.write(simplejson.dumps(json_query_data))
 		
 class companyStepOne(webapp.RequestHandler): #set title and create survey
 	def post(self):
